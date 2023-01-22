@@ -1,6 +1,0 @@
-/*--------------------------------------------------------------------------------------------------------------------*/
-/*----------------------------------------------ABSTRACTION-----------------------------------------------------------*/
-/*--------------------------------------------------------------------------------------------------------------------*/
-
-Abstraction: to offer a simpler interface (some methods and properties are not accessible to the client) and reduce
-the impact of change in the code. We hide the details and show only the essentials to the user.

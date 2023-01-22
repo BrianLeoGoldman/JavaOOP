@@ -1,6 +1,0 @@
-/*--------------------------------------------------------------------------------------------------------------------*/
-/*----------------------------------------------POLYMORPHISM----------------------------------------------------------*/
-/*--------------------------------------------------------------------------------------------------------------------*/
-
-// Polymorphism: this avoids longs if-else statements or switch statements. You have a method with the same name in
-// different objects, and each method will behave different depending on the type of the object
