@@ -1,4 +1,13 @@
 import abstraction.Computer;
+import designPatterns.strategy.Employee;
+import designPatterns.strategy.display.GraphicDisplayingBehaviour;
+import designPatterns.strategy.display.TextDisplayingBehaviour;
+import designPatterns.strategy.rest.HighRestingBehaviour;
+import designPatterns.strategy.rest.LowRestingBehaviour;
+import designPatterns.strategy.rest.MediumRestingBehaviour;
+import designPatterns.strategy.work.FinanceWorkingBehaviour;
+import designPatterns.strategy.work.HRWorkingBehaviour;
+import designPatterns.strategy.work.TechnicalWorkingBehaviour;
 import encapsulation.Car;
 import inheritance.Dog;
 import inheritance.Duck;
@@ -13,8 +22,23 @@ import java.util.stream.Collectors;
 public class JavaOOPApplication {
 
         public static void main(String[] args) {
-
                 // Encapsulation
+                // encapsulationTest();
+
+                // Abstraction
+                // abstractionTest();
+
+                // Inheritance
+                // inheritanceTest();
+
+                // Polymorphism
+                // polymorphismTest();
+
+                // Strategy Pattern
+                strategyPatternTest();
+        }
+
+        private static void encapsulationTest() {
                 Car car1 = new Car("Toyota", "Corolla", "grey");
                 Car car2 = new Car("Ford", "Mondeo", "blue");
                 Car car3 = new Car("Chevrolet", "Camaro", "red");
@@ -24,8 +48,9 @@ public class JavaOOPApplication {
                 car1.move();
                 car1.stop();
                 car3.stop();
+        }
 
-                // Abstraction
+        private static void abstractionTest() {
                 Computer myComputer = new Computer();
                 myComputer.turnOn();
                 myComputer.inputCommand("image", "photo.jpg");
@@ -34,8 +59,9 @@ public class JavaOOPApplication {
                 myComputer.turnOff();
                 // myComputer.processImage("dog.png");
                 // myComputer.playGame("Undertale"):
+        }
 
-                // Inheritance
+        private static void inheritanceTest() {
                 Duck animal1 = new Duck();
                 Dog animal2 = new Dog();
                 animal1.setName("Ducky"); animal1.setAge(2);
@@ -48,8 +74,9 @@ public class JavaOOPApplication {
                 animal2.play();
                 System.out.println("The duck is called " + animal1.getName() + " and is " + animal1.getAge() + " years old");
                 System.out.println("The dog is called " + animal2.getName() + " and is " + animal2.getAge() + " years old");
+        }
 
-                // Polymorphism
+        private static void polymorphismTest() {
                 Command executable1 = new Command();
                 Order executable2 = new Order();
                 Command executable3 = new Command();
@@ -66,5 +93,33 @@ public class JavaOOPApplication {
                         System.out.println(s);
                 }
         }
+
+        private static void strategyPatternTest() {
+                Employee employee = new Employee("John", 1);
+
+                employee.display();
+                employee.rest();
+                employee.work();
+
+                employee.setDisplayingBehaviour(new GraphicDisplayingBehaviour());
+                employee.display();
+                employee.setRestingBehaviour(new HighRestingBehaviour());
+                employee.rest();
+                employee.setWorkingBehaviour(new TechnicalWorkingBehaviour());
+                employee.work();
+
+                employee.setDisplayingBehaviour(new TextDisplayingBehaviour());
+                employee.display();
+                employee.setRestingBehaviour(new MediumRestingBehaviour());
+                employee.rest();
+                employee.setWorkingBehaviour(new FinanceWorkingBehaviour());
+                employee.work();
+
+                employee.setRestingBehaviour(new LowRestingBehaviour());
+                employee.rest();
+                employee.setWorkingBehaviour(new HRWorkingBehaviour());
+                employee.work();
+        }
+
 
 }
