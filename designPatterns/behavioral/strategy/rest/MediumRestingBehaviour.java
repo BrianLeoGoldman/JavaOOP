@@ -1,4 +1,4 @@
-package designPatterns.strategy.rest;
+package designPatterns.behavioral.strategy.rest;
 
 public class MediumRestingBehaviour implements RestingBehaviour {
     @Override

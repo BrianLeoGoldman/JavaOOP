@@ -1,6 +1,4 @@
-package designPatterns.strategy.display;
-
-import designPatterns.strategy.display.DisplayingBehaviour;
+package designPatterns.behavioral.strategy.display;
 
 public class NoDisplayingBehaviour implements DisplayingBehaviour {
     @Override

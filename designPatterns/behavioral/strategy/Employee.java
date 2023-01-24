@@ -1,11 +1,11 @@
-package designPatterns.strategy;
+package designPatterns.behavioral.strategy;
 
-import designPatterns.strategy.display.DisplayingBehaviour;
-import designPatterns.strategy.display.NoDisplayingBehaviour;
-import designPatterns.strategy.rest.NoRestingBehaviour;
-import designPatterns.strategy.rest.RestingBehaviour;
-import designPatterns.strategy.work.NoWorkingBehaviour;
-import designPatterns.strategy.work.WorkingBehaviour;
+import designPatterns.behavioral.strategy.display.DisplayingBehaviour;
+import designPatterns.behavioral.strategy.display.NoDisplayingBehaviour;
+import designPatterns.behavioral.strategy.rest.NoRestingBehaviour;
+import designPatterns.behavioral.strategy.rest.RestingBehaviour;
+import designPatterns.behavioral.strategy.work.NoWorkingBehaviour;
+import designPatterns.behavioral.strategy.work.WorkingBehaviour;
 
 public class Employee {
 

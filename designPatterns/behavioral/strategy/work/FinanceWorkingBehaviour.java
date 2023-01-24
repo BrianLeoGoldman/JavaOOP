@@ -1,4 +1,4 @@
-package designPatterns.strategy.work;
+package designPatterns.behavioral.strategy.work;
 
 public class FinanceWorkingBehaviour implements WorkingBehaviour {
     @Override

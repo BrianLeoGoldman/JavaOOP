@@ -1,4 +1,4 @@
-package designPatterns.strategy.display;
+package designPatterns.behavioral.strategy.display;
 
 public interface DisplayingBehaviour {
 

@@ -1,4 +1,4 @@
-package designPatterns.strategy.work;
+package designPatterns.behavioral.strategy.work;
 
 public class NoWorkingBehaviour implements WorkingBehaviour {
     @Override
