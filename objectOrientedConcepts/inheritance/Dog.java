@@ -1,4 +1,4 @@
-package inheritance;
+package objectOrientedConcepts.inheritance;
 
 public class Dog extends Animal { // A Dog IS AN Animal
 

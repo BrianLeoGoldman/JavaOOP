@@ -1,4 +1,4 @@
-package polymorphism;
+package objectOrientedConcepts.polymorphism;
 
 public interface Executable {
 

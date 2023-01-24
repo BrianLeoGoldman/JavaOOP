@@ -1,4 +1,4 @@
-package encapsulation;
+package objectOrientedConcepts.encapsulation;
 
 public class Car {  // Class (template of an object)
 

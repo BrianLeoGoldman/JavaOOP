@@ -1,4 +1,4 @@
-import abstraction.Computer;
+import objectOrientedConcepts.abstraction.Computer;
 import designPatterns.strategy.Employee;
 import designPatterns.strategy.display.GraphicDisplayingBehaviour;
 import designPatterns.strategy.display.TextDisplayingBehaviour;
@@ -8,12 +8,12 @@ import designPatterns.strategy.rest.MediumRestingBehaviour;
 import designPatterns.strategy.work.FinanceWorkingBehaviour;
 import designPatterns.strategy.work.HRWorkingBehaviour;
 import designPatterns.strategy.work.TechnicalWorkingBehaviour;
-import encapsulation.Car;
-import inheritance.Dog;
-import inheritance.Duck;
-import polymorphism.Command;
-import polymorphism.Executable;
-import polymorphism.Order;
+import objectOrientedConcepts.encapsulation.Car;
+import objectOrientedConcepts.inheritance.Dog;
+import objectOrientedConcepts.inheritance.Duck;
+import objectOrientedConcepts.polymorphism.Command;
+import objectOrientedConcepts.polymorphism.Executable;
+import objectOrientedConcepts.polymorphism.Order;
 
 import java.util.ArrayList;
 import java.util.List;

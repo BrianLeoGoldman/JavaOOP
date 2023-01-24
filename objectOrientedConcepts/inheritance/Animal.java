@@ -1,4 +1,4 @@
-package inheritance;
+package objectOrientedConcepts.inheritance;
 
 abstract class Animal {
     private String name;
