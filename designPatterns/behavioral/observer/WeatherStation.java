@@ -21,7 +21,7 @@ public class WeatherStation implements Observable {
     }
 
     @Override
-    public void remove(Observer observer) {
+    public void unregister(Observer observer) {
         this.observers.remove(observer);
     }
 

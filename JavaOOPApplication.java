@@ -146,6 +146,8 @@ public class JavaOOPApplication {
                 station.setTemperature(29);
                 System.out.println("Setting humidity to 31...");
                 station.setHumidity(31);
+                System.out.println("Unregistering one sprinkler and one air conditioner...");
+                station.unregister(sprinkler2); station.unregister(airConditioner2);
                 System.out.println("Setting temperature to 31...");
                 station.setTemperature(31);
         }

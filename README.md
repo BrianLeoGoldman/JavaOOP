@@ -12,3 +12,4 @@ Project with explanations and examples of Object-Oriented Programming concepts a
 ### Design Patterns:
 
 - Strategy
+- Observer
