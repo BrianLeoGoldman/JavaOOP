@@ -1,3 +1,6 @@
+import designPatterns.behavioral.observer.AirConditioner;
+import designPatterns.behavioral.observer.Sprinkler;
+import designPatterns.behavioral.observer.WeatherStation;
 import objectOrientedConcepts.abstraction.Computer;
 import designPatterns.behavioral.strategy.Employee;
 import designPatterns.behavioral.strategy.display.GraphicDisplayingBehaviour;
@@ -35,7 +38,10 @@ public class JavaOOPApplication {
                 // polymorphismTest();
 
                 // Strategy Pattern
-                strategyPatternTest();
+                // strategyPatternTest();
+
+                // Observer Pattern
+                observerPatternTest();
         }
 
         private static void encapsulationTest() {
@@ -120,6 +126,30 @@ public class JavaOOPApplication {
                 employee.setWorkingBehaviour(new HRWorkingBehaviour());
                 employee.work();
         }
+
+        private static void observerPatternTest() {
+                WeatherStation station = new WeatherStation();
+                Sprinkler sprinkler1 = new Sprinkler(station);
+                Sprinkler sprinkler2 = new Sprinkler(station);
+                Sprinkler sprinkler3 = new Sprinkler(station);
+                AirConditioner airConditioner1 = new AirConditioner(station);
+                AirConditioner airConditioner2 = new AirConditioner(station);
+                station.register(sprinkler1); station.register(sprinkler2); station.register(sprinkler3);
+                station.register(airConditioner1); station.register(airConditioner2);
+                System.out.println("Setting humidity to 46...");
+                station.setHumidity(46);
+                System.out.println("Setting temperature to 26...");
+                station.setTemperature(26);
+                System.out.println("Setting humidity to 34...");
+                station.setHumidity(34);
+                System.out.println("Setting temperature to 29...");
+                station.setTemperature(29);
+                System.out.println("Setting humidity to 31...");
+                station.setHumidity(31);
+                System.out.println("Setting temperature to 31...");
+                station.setTemperature(31);
+        }
+
 
 
 }
