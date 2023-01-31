@@ -13,3 +13,4 @@ Project with explanations and examples of Object-Oriented Programming concepts a
 
 - Strategy
 - Observer
+- Decorator

@@ -1,6 +1,13 @@
 import designPatterns.behavioral.observer.AirConditioner;
 import designPatterns.behavioral.observer.Sprinkler;
 import designPatterns.behavioral.observer.WeatherStation;
+import designPatterns.structural.decorator.IronRobot;
+import designPatterns.structural.decorator.Robot;
+import designPatterns.structural.decorator.SteelRobot;
+import designPatterns.structural.decorator.decorators.BeamRobot;
+import designPatterns.structural.decorator.decorators.LaserRobot;
+import designPatterns.structural.decorator.decorators.NanoRobot;
+import designPatterns.structural.decorator.decorators.ReactorRobot;
 import objectOrientedConcepts.abstraction.Computer;
 import designPatterns.behavioral.strategy.Employee;
 import designPatterns.behavioral.strategy.display.GraphicDisplayingBehaviour;
@@ -41,7 +48,10 @@ public class JavaOOPApplication {
                 // strategyPatternTest();
 
                 // Observer Pattern
-                observerPatternTest();
+                // observerPatternTest();
+
+                // Decorator Pattern
+                decoratorPatternTest();
         }
 
         private static void encapsulationTest() {
@@ -150,6 +160,23 @@ public class JavaOOPApplication {
                 station.unregister(sprinkler2); station.unregister(airConditioner2);
                 System.out.println("Setting temperature to 31...");
                 station.setTemperature(31);
+        }
+
+        private static void decoratorPatternTest() {
+                Robot steelRobot = new SteelRobot();
+                Robot decoratedRobot1 = new LaserRobot(new NanoRobot(new ReactorRobot(new BeamRobot(steelRobot))));
+                System.out.println(decoratedRobot1.getDescription());
+                System.out.println(decoratedRobot1.build());
+
+                Robot ironRobot1 = new IronRobot();
+                Robot decoratedRobot2 = new LaserRobot(new ReactorRobot(new ReactorRobot(new LaserRobot(ironRobot1))));
+                System.out.println(decoratedRobot2.getDescription());
+                System.out.println(decoratedRobot2.build());
+
+                Robot ironRobot2 = new IronRobot();
+                Robot decoratedRobot3 = new BeamRobot(ironRobot2);
+                System.out.println(decoratedRobot3.getDescription());
+                System.out.println(decoratedRobot3.build());
         }
 
 
