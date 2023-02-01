@@ -1,6 +1,9 @@
 import designPatterns.behavioral.observer.AirConditioner;
 import designPatterns.behavioral.observer.Sprinkler;
 import designPatterns.behavioral.observer.WeatherStation;
+import designPatterns.creational.factory_method.factories.BalancedEnemyFactory;
+import designPatterns.creational.factory_method.Enemy;
+import designPatterns.creational.factory_method.factories.RandomEnemyFactory;
 import designPatterns.structural.decorator.IronRobot;
 import designPatterns.structural.decorator.Robot;
 import designPatterns.structural.decorator.SteelRobot;
@@ -51,7 +54,10 @@ public class JavaOOPApplication {
                 // observerPatternTest();
 
                 // Decorator Pattern
-                decoratorPatternTest();
+                // decoratorPatternTest();
+
+                // Factory Method Pattern
+                factoryMethodPatternTest();
         }
 
         private static void encapsulationTest() {
@@ -177,6 +183,30 @@ public class JavaOOPApplication {
                 Robot decoratedRobot3 = new BeamRobot(ironRobot2);
                 System.out.println(decoratedRobot3.getDescription());
                 System.out.println(decoratedRobot3.build());
+        }
+
+        private static void factoryMethodPatternTest() {
+                RandomEnemyFactory randomFactory = new RandomEnemyFactory();
+                BalancedEnemyFactory balancedFactory = new BalancedEnemyFactory("Soldier");
+                List<Enemy> randomEnemies = new ArrayList();
+                List<Enemy> balancedEnemies = new ArrayList();
+                int count = 6;
+                while (count > 0) {
+                        randomEnemies.add(randomFactory.createEnemy());
+                        balancedEnemies.add(balancedFactory.createEnemy());
+                        count--;
+                }
+
+                System.out.println("Random Enemy Factory");
+                for (Enemy e : randomEnemies) {
+                        System.out.println(e.display());
+                }
+
+                System.out.println("Balanced Enemy Factory");
+                for (Enemy e : balancedEnemies) {
+                        System.out.println(e.display());
+                }
+
         }
 
 
