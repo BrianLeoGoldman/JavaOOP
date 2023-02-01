@@ -6,8 +6,8 @@ public class Soldier extends Enemy {
         super(life, strength, reward);
     }
 
-    public int soldierAttack() {
-        return this.basicAttack() + 10;
+    public int attack() {
+        return super.attack() + 10;
     }
 
     public String display() {

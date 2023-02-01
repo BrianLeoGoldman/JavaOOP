@@ -6,8 +6,8 @@ public class Ghost extends Enemy {
         super(life, strength, reward);
     }
 
-    public int ghostAttack() {
-        return this.basicAttack() - 3;
+    public int attack() {
+        return super.attack() - 3;
     }
 
     public void receiveAttack(int impact) {

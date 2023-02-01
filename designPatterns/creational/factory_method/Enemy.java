@@ -12,7 +12,7 @@ public abstract class Enemy {
         this.reward = reward;
     }
 
-    public int basicAttack() {
+    public int attack() {
         return this.strength;
     }
 

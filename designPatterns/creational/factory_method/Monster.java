@@ -6,8 +6,8 @@ public class Monster extends Enemy {
         super(life, strength, reward);
     }
 
-    public int monsterAttack() {
-        return this.basicAttack() * 2;
+    public int attack() {
+        return super.attack() * 2;
     }
 
     public String display() {
