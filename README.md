@@ -15,3 +15,4 @@ Project with explanations and examples of Object-Oriented Programming concepts a
 - Observer
 - Decorator
 - Factory Method
+- Abstract Factory
