@@ -1,6 +1,10 @@
 import designPatterns.behavioral.observer.AirConditioner;
 import designPatterns.behavioral.observer.Sprinkler;
 import designPatterns.behavioral.observer.WeatherStation;
+import designPatterns.creational.abstract_factory.Truck;
+import designPatterns.creational.abstract_factory.factories.CarFactory;
+import designPatterns.creational.abstract_factory.factories.FordCarFactory;
+import designPatterns.creational.abstract_factory.factories.ToyotaCarFactory;
 import designPatterns.creational.factory_method.factories.BalancedEnemyFactory;
 import designPatterns.creational.factory_method.Enemy;
 import designPatterns.creational.factory_method.factories.RandomEnemyFactory;
@@ -34,7 +38,7 @@ import java.util.stream.Collectors;
 
 public class JavaOOPApplication {
 
-        public static void main(String[] args) {
+        public static void main(String[] args) throws Exception {
                 // Encapsulation
                 // encapsulationTest();
 
@@ -57,7 +61,10 @@ public class JavaOOPApplication {
                 // decoratorPatternTest();
 
                 // Factory Method Pattern
-                factoryMethodPatternTest();
+                // factoryMethodPatternTest();
+
+                // Abstract Factory Pattern
+                abstractFactoryPatternTest();
         }
 
         private static void encapsulationTest() {
@@ -206,6 +213,38 @@ public class JavaOOPApplication {
                 for (Enemy e : balancedEnemies) {
                         System.out.println(e.display());
                 }
+
+        }
+
+        private static void abstractFactoryPatternTest() throws Exception {
+                CarFactory fordFactory = new FordCarFactory();
+                CarFactory toyotaFactory = new ToyotaCarFactory();
+
+                Truck fordTruck = new Truck();
+                fordTruck.setChassis(fordFactory.buildChassis("AE1203F"));
+                fordTruck.setEngine(fordFactory.buildEngine(500));
+                fordTruck.setRadiator(fordFactory.buildRadiator());
+                fordTruck.setBattery(fordFactory.buildBattery(21));
+
+                System.out.println(fordTruck.getEngine().start());
+                System.out.println(fordTruck.getEngine().stop());
+                System.out.println(fordTruck.getRadiator().coolEngine());
+                System.out.println(fordTruck.getRadiator().heatCabin());
+                System.out.println(fordTruck.getBattery().turnOn());
+                System.out.println(fordTruck.getBattery().turnOff());
+
+                Truck toyotaTruck = new Truck();
+                toyotaTruck.setChassis(toyotaFactory.buildChassis("CE3456T"));
+                toyotaTruck.setEngine(toyotaFactory.buildEngine(520));
+                toyotaTruck.setRadiator(toyotaFactory.buildRadiator());
+                toyotaTruck.setBattery(toyotaFactory.buildBattery(17));
+
+                System.out.println(toyotaTruck.getEngine().start());
+                System.out.println(toyotaTruck.getEngine().stop());
+                System.out.println(toyotaTruck.getRadiator().coolEngine());
+                System.out.println(toyotaTruck.getRadiator().heatCabin());
+                System.out.println(toyotaTruck.getBattery().turnOn());
+                System.out.println(toyotaTruck.getBattery().turnOff());
 
         }
 
