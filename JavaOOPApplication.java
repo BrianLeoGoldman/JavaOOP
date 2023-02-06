@@ -8,6 +8,7 @@ import designPatterns.creational.abstract_factory.factories.ToyotaCarFactory;
 import designPatterns.creational.factory_method.factories.BalancedEnemyFactory;
 import designPatterns.creational.factory_method.Enemy;
 import designPatterns.creational.factory_method.factories.RandomEnemyFactory;
+import designPatterns.creational.singleton.Manager;
 import designPatterns.structural.decorator.IronRobot;
 import designPatterns.structural.decorator.Robot;
 import designPatterns.structural.decorator.SteelRobot;
@@ -64,7 +65,10 @@ public class JavaOOPApplication {
                 // factoryMethodPatternTest();
 
                 // Abstract Factory Pattern
-                abstractFactoryPatternTest();
+                // abstractFactoryPatternTest();
+
+                // Singleton Pattern Test
+                singletonPatternTest();
         }
 
         private static void encapsulationTest() {
@@ -246,6 +250,19 @@ public class JavaOOPApplication {
                 System.out.println(toyotaTruck.getBattery().turnOn());
                 System.out.println(toyotaTruck.getBattery().turnOff());
 
+        }
+
+        private static void singletonPatternTest() {
+                // Manager manager = new Manager();
+                Manager manager1 = Manager.getInstance();
+                System.out.println("Manager 1: " + manager1.getCode());
+                manager1.setCode(7);
+                System.out.println("Manager 1: " + manager1.getCode());
+                Manager manager2 = Manager.getInstance();
+                System.out.println("Manager 2: " + manager2.getCode());
+                manager1.setCode(9);
+                System.out.println("Manager 1: " + manager1.getCode());
+                System.out.println("Manager 2: " + manager2.getCode());
         }
 
 

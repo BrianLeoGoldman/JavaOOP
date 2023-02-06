@@ -16,3 +16,4 @@ Project with explanations and examples of Object-Oriented Programming concepts a
 - Decorator
 - Factory Method
 - Abstract Factory
+- Singleton
