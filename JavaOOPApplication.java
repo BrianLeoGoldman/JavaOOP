@@ -1,3 +1,9 @@
+import designPatterns.behavioral.command.Warrior;
+import designPatterns.behavioral.command.Wizard;
+import designPatterns.behavioral.command.spells.BerserkAttack;
+import designPatterns.behavioral.command.spells.IncreaseStamina;
+import designPatterns.behavioral.command.spells.RecoverLife;
+import designPatterns.behavioral.command.spells.Spell;
 import designPatterns.behavioral.observer.AirConditioner;
 import designPatterns.behavioral.observer.Sprinkler;
 import designPatterns.behavioral.observer.WeatherStation;
@@ -68,7 +74,10 @@ public class JavaOOPApplication {
                 // abstractFactoryPatternTest();
 
                 // Singleton Pattern Test
-                singletonPatternTest();
+                // singletonPatternTest();
+
+                // Command Pattern Test
+                commandPatternTest();
         }
 
         private static void encapsulationTest() {
@@ -263,6 +272,34 @@ public class JavaOOPApplication {
                 manager1.setCode(9);
                 System.out.println("Manager 1: " + manager1.getCode());
                 System.out.println("Manager 2: " + manager2.getCode());
+        }
+
+        private static void commandPatternTest() {
+                Wizard wizard = new Wizard("Dubois", 75);
+                Warrior warrior1 = new Warrior("Marcel",39, 27, 56);
+                Warrior warrior2 = new Warrior("Chantal",27, 38, 49);
+                Spell spell1 = new IncreaseStamina(9, warrior1);
+                Spell spell2 = new RecoverLife(17, warrior2);
+                Spell spell3 = new IncreaseStamina(12, warrior2);
+                wizard.addSpell(spell1); wizard.addSpell(spell2); wizard.addSpell(spell3);
+
+                warrior1.display(); warrior2.display();
+                System.out.println("The wizard is about to cast the spells!");
+                wizard.castSpells();
+                warrior1.display(); warrior2.display();
+
+                System.out.println("The wizard is about to dispel the spells!");
+                wizard.dispelSpells();
+                warrior1.display(); warrior2.display();
+
+                Spell spell4 = new BerserkAttack(warrior2);
+                Spell spell5 = new RecoverLife(34, warrior1);
+                Spell spell6 = new BerserkAttack(warrior1);
+                wizard.addSpell(spell4); wizard.addSpell(spell5); wizard.addSpell(spell6);
+                
+                System.out.println("The wizard is about to cast the spells!");
+                wizard.castSpells();
+                warrior1.display(); warrior2.display();
         }
 
 
