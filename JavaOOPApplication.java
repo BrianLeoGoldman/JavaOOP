@@ -296,7 +296,7 @@ public class JavaOOPApplication {
                 Spell spell5 = new RecoverLife(34, warrior1);
                 Spell spell6 = new BerserkAttack(warrior1);
                 wizard.addSpell(spell4); wizard.addSpell(spell5); wizard.addSpell(spell6);
-                
+
                 System.out.println("The wizard is about to cast the spells!");
                 wizard.castSpells();
                 warrior1.display(); warrior2.display();

@@ -45,6 +45,6 @@ public class Wizard {
 
     public void dispelSpells() {
         this.spells.forEach(Spell::dispel);
-        this.spells = new ArrayList<>();
+        this.spells.clear();
     }
 }
