@@ -17,6 +17,6 @@ public class BerserkAttack implements Spell {
 
     @Override
     public void dispel() {
-
+        System.out.println("A berserk attack spell cannot be removed");
     }
 }
