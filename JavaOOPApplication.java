@@ -15,8 +15,8 @@ import designPatterns.creational.factory_method.factories.BalancedEnemyFactory;
 import designPatterns.creational.factory_method.Enemy;
 import designPatterns.creational.factory_method.factories.RandomEnemyFactory;
 import designPatterns.creational.singleton.Manager;
-import designPatterns.structural.adapter.SecretCamera;
-import designPatterns.structural.adapter.SecretDecoder;
+import designPatterns.structural.adapter.Camera;
+import designPatterns.structural.adapter.CameraDecoder;
 import designPatterns.structural.adapter.Spy;
 import designPatterns.structural.decorator.IronRobot;
 import designPatterns.structural.decorator.Robot;
@@ -310,12 +310,12 @@ public class JavaOOPApplication {
 
         private static void adapterPatternTest() {
                 Spy spy = new Spy("Grey Fox", "Albania");
-                SecretCamera camera1 = new SecretCamera("oeuacbiuaocuabecuabdckjebucalecleacbluecbjalecb");
-                SecretDecoder decoder1= new SecretDecoder(36345, camera1);
+                Camera camera1 = new Camera("oeuacbiuaocuabecuabdckjebucalecleacbluecbjalecb");
+                CameraDecoder decoder1= new CameraDecoder(36345, camera1);
                 spy.obtainInformation(decoder1);
 
-                SecretCamera camera2 = new SecretCamera("uecebcbbaeeuueuldlilbcbueijdbiusjjauerudb");
-                SecretDecoder decoder2= new SecretDecoder(87112, camera2);
+                Camera camera2 = new Camera("uecebcbbaeeuueuldlilbcbueijdbiusjjauerudb");
+                CameraDecoder decoder2= new CameraDecoder(87112, camera2);
                 spy.obtainInformation(decoder2);
         }
 

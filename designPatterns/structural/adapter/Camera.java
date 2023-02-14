@@ -1,10 +1,10 @@
 package designPatterns.structural.adapter;
 
-public class SecretCamera {
+public class Camera {
 
     private final String secretCode;
 
-    public SecretCamera(String secretCode) {
+    public Camera(String secretCode) {
         this.secretCode = secretCode;
     }
 

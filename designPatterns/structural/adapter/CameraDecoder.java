@@ -1,11 +1,11 @@
 package designPatterns.structural.adapter;
 
-public class SecretDecoder implements Decoder {
+public class CameraDecoder implements Decoder {
 
     private int code;
-    private SecretCamera camera;
+    private Camera camera;
 
-    public SecretDecoder(int code, SecretCamera camera) {
+    public CameraDecoder(int code, Camera camera) {
         this.code = code;
         this.camera = camera;
     }

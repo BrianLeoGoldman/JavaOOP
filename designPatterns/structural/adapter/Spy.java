@@ -11,7 +11,7 @@ public class Spy {
         this.country = country;
     }
 
-    public void obtainInformation(SecretDecoder decoder) {
+    public void obtainInformation(CameraDecoder decoder) {
         String decodedInformation = decoder.decode();
         System.out.println("The code is: " + decodedInformation);
     }
