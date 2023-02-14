@@ -18,3 +18,4 @@ Project with explanations and examples of Object-Oriented Programming concepts a
 - Abstract Factory
 - Singleton
 - Command
+- Adapter
